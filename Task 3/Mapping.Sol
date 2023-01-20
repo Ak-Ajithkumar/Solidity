@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.0;
+
+contract Mapping{
+    mapping (address => uint) public balances;
+    mapping (address=> mapping(address=>bool)) public isFriend;
+
+    function sample() external {
+        balances[msg.sender] = 123;
+        uint bal = balances[msg.sender];
+        uint bal1 = balances[address(1)];
+
+        balances[msg.sender] += 123;
+
+        delete balances[msg.sender];
+    }
+}
